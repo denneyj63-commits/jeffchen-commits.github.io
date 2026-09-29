@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>denneyj63-commits — 个人主页</title>
+<meta content="一个用于个人介绍、项目展示与文字记录的空间。" name="description"/>
+<meta content="light" name="color-scheme"/>
+<style>
+    :root{--paper:#faf9f6;--ink:#242725;--muted:#696d68;--line:#dedfd7;--accent:#7c432e;--soft:#f0eee7;--serif:Georgia,'Noto Serif CJK SC','Songti SC',STSong,serif;--sans:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:32px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none;text-underline-offset:5px}
+    a:hover{color:var(--accent)}
+    a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius:2px}
+    ::selection{background:#e8dac9}
+    .wrap{width:min(100% - 80px,960px);margin:auto}
+    .skip{position:absolute;left:16px;top:-80px;background:var(--ink);color:white;padding:10px 18px;z-index:10}
+    .skip:focus{top:10px}
+    .masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:104px;border-bottom:1px solid var(--line)}
+    .wordmark{font-size:12px;letter-spacing:.17em;font-weight:600;white-space:nowrap}
+    nav{display:flex;gap:26px;font-size:13px;color:var(--muted)}
+    .draft{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;margin:28px 0 0}
+    .draft:before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0}
+    .intro{padding:60px 0 66px;max-width:700px}
+    .eyebrow{font-size:11px;letter-spacing:.15em;font-weight:500;color:var(--accent);margin:0 0 18px;text-transform:uppercase}
+    h1{font-family:var(--serif);font-size:58px;line-height:1.22;font-weight:500;letter-spacing:.02em;margin:0 0 18px}
+    .subtitle{font-family:var(--serif);font-size:22px;line-height:1.65;letter-spacing:.015em;margin:0 0 23px}
+    .bio{color:var(--muted);font-size:15px;max-width:610px;margin:0;line-height:1.95}
+    .intro-links{display:flex;gap:24px;margin-top:27px;font-size:13px}
+    .intro-links a{border-bottom:1px solid var(--line);padding-bottom:2px}
+    .arrow{font-size:15px;margin-left:6px}
+    .section{display:grid;grid-template-columns:185px minmax(0,1fr);gap:38px;border-top:1px solid var(--line);padding:34px 0 38px}
+    .section-label{padding-top:4px}
+    .index{font-size:10px;font-family:monospace;color:var(--muted);letter-spacing:.13em;display:block;margin-bottom:9px}
+    h2{font-family:var(--serif);font-size:21px;line-height:1.4;font-weight:500;margin:0}
+    .en{font-size:10px;letter-spacing:.12em;color:var(--muted);display:block;margin-top:8px}
+    .updates{display:grid;grid-template-columns:90px minmax(0,1fr);gap:17px;align-items:baseline}
+    .date{font-family:var(--sans);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+    p{margin:0}
+    .row-title{font-size:17px;font-weight:500;line-height:1.65;margin:0 0 7px}
+    .description{font-size:14px;line-height:1.85;color:var(--muted)}
+    .project+.project{border-top:1px solid var(--line);padding-top:23px;margin-top:24px}
+    .project-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+    .placeholder{font-size:10px;letter-spacing:.035em;color:var(--muted);border:1px solid var(--line);padding:1px 8px;border-radius:3px;white-space:nowrap}
+    .tags{display:flex;gap:12px;flex-wrap:wrap;color:var(--accent);font-size:11px;margin-top:12px}
+    .tags span+span:before{content:"/";color:var(--line);margin-right:12px}
+    details+details{border-top:1px solid var(--line);margin-top:18px;padding-top:18px}
+    summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:minmax(0,1fr) 20px;gap:14px;align-items:center}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-size:21px;color:var(--muted);font-weight:300;text-align:center}
+    details[open]>summary:after{content:"−"}
+    summary .row-title{margin:0;font-size:16px}
+    .note-meta{font-size:11px;letter-spacing:.03em;color:var(--muted);margin-top:4px}
+    .note-body{font-size:14px;color:var(--muted);line-height:1.95;margin-top:18px;border-left:2px solid var(--line);padding-left:18px}
+    .note-body p+p{margin-top:12px}
+    .experience{display:grid;grid-template-columns:90px minmax(0,1fr);gap:17px}
+    .experience .row-title{font-size:16px;margin-bottom:4px}
+    .contact{margin-top:7px;margin-bottom:32px;padding:28px 32px;border:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:32px;background:var(--soft)}
+    .contact h2{font-size:24px;margin-bottom:10px}
+    .contact .description{max-width:500px}
+    .contact-label{font-size:10px;letter-spacing:.12em;color:var(--accent);margin-top:8px;white-space:nowrap}
+    footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted)}
+    footer a{white-space:nowrap}
+    @media (min-width:1100px){.wrap{width:min(100% - 120px,960px)}}
+    @media (max-width:680px){
+      .wrap{width:calc(100% - 40px)}
+      .masthead{min-height:94px;align-items:flex-start;justify-content:center;flex-direction:column;gap:13px;padding:21px 0}
+      .wordmark{font-size:11px}
+      nav{gap:23px;font-size:12px;flex-wrap:wrap}
+      .draft{margin-top:21px;font-size:11px;line-height:1.7}
+      .intro{padding:44px 0 44px}
+      h1{font-size:42px;margin-bottom:17px}
+      .subtitle{font-size:19px;margin-bottom:19px}
+      .bio{font-size:14px}
+      .intro-links{font-size:12px;margin-top:23px}
+      .section{grid-template-columns:1fr;gap:24px;padding:28px 0 31px}
+      .section-label{display:grid;grid-template-columns:25px auto 1fr;column-gap:11px;align-items:baseline}
+      .index{margin:0;font-size:9px}
+      h2{font-size:20px}
+      .en{margin:0 0 0 5px;font-size:9px}
+      .updates,.experience{grid-template-columns:66px minmax(0,1fr);gap:16px}
+      .row-title{font-size:16px}
+      .contact{padding:23px 21px;gap:16px;flex-direction:column;margin-top:1px}
+      .contact h2{font-size:22px}
+      .contact-label{margin:0}
+      footer{font-size:10px;align-items:baseline}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{nav,.draft,.intro-links,footer a{display:none}.wrap{width:100%}.masthead{min-height:50px}.intro{padding:32px 0}.section{break-inside:avoid}body{background:white}.contact{background:white}}
+  
+/* Keep long account names readable on narrow screens. */
+h1{font-size:clamp(28px,5vw,54px);overflow-wrap:anywhere;letter-spacing:-.035em}
+footer{flex-wrap:wrap}
+.intro-links a{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">跳到主要内容</a>
+<div class="wrap">
+<header class="masthead">
+<a aria-label="返回个人简介" class="wordmark" href="#about">A PERSONAL SPACE.</a>
+<nav aria-label="主导航">
+<a href="#about">简介</a><a href="#projects">项目</a><a href="#writing">文字</a><a href="#contact">联系</a>
+</nav>
+</header>
+
+<p class="draft">个人主页 · 内容整理中</p>
+<main id="main">
+<section aria-labelledby="name" class="intro" id="about">
+<p class="eyebrow">About me / 个人介绍</p>
+
+<h1 id="name">denneyj63-commits</h1>
+<p class="subtitle">一个属于自己的小小空间。</p>
+<p class="bio">欢迎来到我的个人主页。这里将陆续更新项目、想法与值得记录的片段。</p>
+<div class="intro-links"><a href="#projects">看看我的项目<span aria-hidden="true" class="arrow">↗</span></a><a href="#contact">与我联系<span aria-hidden="true" class="arrow">↗</span></a></div>
+</section>
+<section aria-labelledby="updates-title" class="section" id="updates">
+<div class="section-label"><span class="index">01</span><h2 id="updates-title">最新动态</h2><span class="en">RECENT UPDATES</span></div>
+<div class="updates"><span class="date">2026.09.29</span><p class="description">首页初稿已准备完成，更多内容正在整理中。</p></div>
+</section>
+<section aria-labelledby="projects-title" class="section" id="projects">
+<div class="section-label"><span class="index">02</span><h2 id="projects-title">精选项目</h2><span class="en">SELECTED WORK</span></div>
+<div><article class="project"><div class="project-top"><h3 class="row-title">项目整理中</h3><span class="placeholder">COMING SOON</span></div><p class="description">这里将展示确认公开的项目与作品。</p></article></div>
+</section>
+<section aria-labelledby="writing-title" class="section" id="writing">
+<div class="section-label"><span class="index">03</span><h2 id="writing-title">文字与思考</h2><span class="en">NOTES &amp; IDEAS</span></div>
+<div><details><summary><div><h3 class="row-title">关于这个空间</h3><p class="note-meta">站点说明 · 点击展开</p></div></summary><div class="note-body"><p>这是一个用于个人介绍、项目展示和文字记录的空间。目前尚未发布个人文章，后续内容将在确认后添加。</p></div></details></div>
+</section>
+
+<section aria-labelledby="contact-title" class="contact" id="contact">
+<div><h2 id="contact-title">保持联系。</h2><p class="description">目前可以通过 GitHub 了解这个账号。其他联系方式尚未公开。</p>
+
+<div class="intro-links"><a href="https://github.com/denneyj63-commits">GitHub · denneyj63-commits ↗</a></div></div><span class="contact-label">LET’S CONNECT</span>
+</section>
+</main>
+<footer><span>© 2026 denneyj63-commits</span><a href="#about">返回顶部 ↑</a></footer>
+</div>
+</body>
+</html>
